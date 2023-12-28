@@ -1,6 +1,6 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/app/models/skills.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,17 +9,32 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leadingWidth: 240,
         bottom: const PreferredSize(
             preferredSize: Size.fromHeight(1),
             child: Divider(
               height: 1,
             )),
         elevation: 5.0,
-        leading: IconButton(
-          icon: const Icon(Icons.person),
-          onPressed: () {},
+
+        /// Logo
+        leading: Row(
+          children: [
+            const SizedBox(
+              width: 200,
+            ),
+            IconButton(
+              icon: const Icon(Icons.person),
+              onPressed: () {},
+            ),
+            // const Text('Viresh Dev'),
+          ],
         ),
+
+        /// Name
         title: const Text('Viresh Dev'),
+
+        /// Pages
         actions: [
           TextButton(
             onPressed: () {},
@@ -46,6 +61,9 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
             child: const Text('contact'),
           ),
+          const SizedBox(
+            width: 200,
+          ),
         ],
       ),
       body: ListView(
@@ -57,12 +75,16 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const CircleAvatar(
+                /// Profile
+                CircleAvatar(
                   radius: 150,
+                  child: Image.asset('./assets/image/profile.png'),
                 ),
                 const SizedBox(
                   width: 100,
                 ),
+
+                /// Introduction
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,12 +104,15 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Row(
                         children: [
+                          /// Resume
                           FilledButton(
                               onPressed: () {},
                               child: const Text('View Resume')),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
+
+                          /// Contact form
                           FilledButton.tonal(
                               onPressed: () {},
                               child: const Text('Contact me')),
@@ -125,16 +150,24 @@ class HomeScreen extends StatelessWidget {
                             mainAxisSpacing: 20,
                             maxCrossAxisExtent: 180),
                     children: [
-                      for (int i = 0; i < 12; i++)
-                        const Card(
+                      for (int i = 0; i < skills.length; i++)
+                        Container(
+                          padding: EdgeInsets.all(10),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
-                                Icons.code,
-                                size: 50,
+                              SizedBox(
+                                width: 100,
+                                height: 100,
+                                child: SvgPicture.asset(
+                                  skills[i].logoPath,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
-                              Text('Code')
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(skills[i].name)
                             ],
                           ),
                         ),
@@ -151,7 +184,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 220),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 const Text(
