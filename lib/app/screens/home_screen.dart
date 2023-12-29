@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/app/models/skills.dart';
+
+import '../models/projects.dart';
+import '../widgets/project_card.dart';
+import '../widgets/skill_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,7 +31,6 @@ class HomeScreen extends StatelessWidget {
               icon: const Icon(Icons.person),
               onPressed: () {},
             ),
-            // const Text('Viresh Dev'),
           ],
         ),
 
@@ -38,16 +41,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {},
-            child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Icon(Icons.home_outlined),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Text('About'),
-              ],
-            ),
+            child: const Text('About'),
           ),
           TextButton(
             onPressed: () {},
@@ -59,7 +53,7 @@ class HomeScreen extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {},
-            child: const Text('contact'),
+            child: const Text('Contact'),
           ),
           const SizedBox(
             width: 200,
@@ -151,25 +145,8 @@ class HomeScreen extends StatelessWidget {
                             maxCrossAxisExtent: 180),
                     children: [
                       for (int i = 0; i < skills.length; i++)
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 100,
-                                height: 100,
-                                child: SvgPicture.asset(
-                                  skills[i].logoPath,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(skills[i].name)
-                            ],
-                          ),
+                        SkillCard(
+                          skill: skills[i],
                         ),
                     ]),
                 const SizedBox(
@@ -199,67 +176,122 @@ class HomeScreen extends StatelessWidget {
                     primary: false,
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
-                            childAspectRatio: 0.9,
+                            childAspectRatio: 0.7,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20,
                             maxCrossAxisExtent: 350),
                     children: [
-                      for (int i = 0; i < 6; i++)
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: Colors.black26)),
-                          child: InkWell(
-                            onTap: () {},
-                            onHover: (hover) {},
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.amber[50],
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          topRight: Radius.circular(10))),
-                                  height: 200,
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.all(20.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
-                                    children: [
-                                      Text(
-                                        'Title',
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                      Text(
-                                          'Description of the project, fsgk sk k skgdfkgnsgksf ks ksk skgskgskgks  ksnnfgn s nlns'),
-                                      SizedBox(
-                                        height: 10.0,
-                                      ),
-                                      Text('Tech Stack')
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
+                      for (int i = 0; i < projects.length; i++)
+                        ProjectCard(
+                          project: projects[i],
                         ),
                     ]),
               ],
             ),
-          )
+          ),
+
+          /// Services
 
           /// Bottom bar
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 220),
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromARGB(255, 240, 208, 161),
+                Color.fromARGB(255, 255, 185, 164),
+              ],
+            )),
+            child: Row(
+              children: [
+                const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Viresh Dev',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.location_on),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('Vaishali, Bihar, India'),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.email_rounded),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('vireshdev5e@gmail.com'),
+                        ],
+                      ),
+                    ]),
+                const Spacer(),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          './assets/svg/git.svg',
+                          height: 30,
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        SvgPicture.asset(
+                          './assets/svg/ig.svg',
+                          height: 30,
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        SvgPicture.asset(
+                          './assets/svg/ln.svg',
+                          height: 30,
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        SvgPicture.asset(
+                          './assets/svg/x.svg',
+                          height: 30,
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        SvgPicture.asset(
+                          './assets/svg/fb.svg',
+                          height: 30,
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+
+          /// Copyright
+          AppBar()
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.connect_without_contact_rounded),
-        onPressed: () {},
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: const Icon(Icons.connect_without_contact_rounded),
+      //   onPressed: () {},
+      // ),
     );
   }
 }
