@@ -17,51 +17,57 @@ class Project {
 
 final List<Project> projects = [
   Project(
-    imagePath: './assets/image/movie-cite.png',
-    title: 'Movie-Cite',
-    description: 'description',
-    techStacks: ['Flutter', 'Firebase', 'Rest API'],
-    liveUrl: 'liveUrl',
-    githubUrl: 'githubUrl',
-  ),
-  Project(
     imagePath: './assets/image/ccbcet.png',
     title: 'CodeChef BCET Chapter Website',
-    description: 'description',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     techStacks: ['React', 'Firebase', 'Tailwind CSS'],
-    liveUrl: 'liveUrl',
-    githubUrl: 'githubUrl',
+    liveUrl: 'https://codechefbcetchapter.netlify.app/',
+    githubUrl: 'https://github.com/CodeChef-BCET-Chapter/ccbcet-website',
+  ),
+  Project(
+    imagePath: './assets/image/movie-cite.png',
+    title: 'Movie-Cite',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+    techStacks: ['Flutter', 'Firebase', 'Rest API'],
+    liveUrl: '',
+    githubUrl: '',
   ),
   Project(
     imagePath: './assets/image/climate-x.png',
     title: 'Climate-x',
-    description: 'description',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     techStacks: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'liveUrl',
-    githubUrl: 'githubUrl',
+    liveUrl: 'https://climate-x.netlify.app/',
+    githubUrl: '',
   ),
   Project(
     imagePath: './assets/image/atlas-copco.png',
     title: 'Atlas Copco',
-    description: 'description',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     techStacks: ['Flutter', 'Firebase', 'NodeJs', 'AWS'],
-    liveUrl: 'liveUrl',
-    githubUrl: 'githubUrl',
+    liveUrl: 'https://sprweb.atlascopco.com/',
+    githubUrl: '',
   ),
   Project(
     imagePath: './assets/image/apc.png',
     title: 'APC Revision AID',
-    description: 'description',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     techStacks: ['Flutter', 'Firebase', 'NodeJS', 'AWS'],
-    liveUrl: 'liveUrl',
-    githubUrl: 'githubUrl',
+    liveUrl: 'http://apcwebuat.demoserver25.com/login',
+    githubUrl: '',
   ),
   Project(
     imagePath: './assets/image/templify.png',
     title: 'Templify',
-    description: 'description',
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     techStacks: ['Flutter', 'NodeJS', 'Rest API', 'MongoDB'],
-    liveUrl: 'liveUrl',
+    liveUrl: 'http://templify.demoserver23.com/',
     githubUrl: 'githubUrl',
   ),
 ];

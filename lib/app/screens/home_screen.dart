@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/app/models/skills.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/projects.dart';
 import '../widgets/project_card.dart';
@@ -27,10 +28,13 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               width: 200,
             ),
-            IconButton(
-              icon: const Icon(Icons.person),
-              onPressed: () {},
-            ),
+            CircleAvatar(
+              backgroundColor: Colors.black54,
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Image.asset('./assets/image/vd.png'),
+              ),
+            )
           ],
         ),
 
@@ -89,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                             fontSize: 50.0, fontWeight: FontWeight.bold),
                       ),
                       const Text(
-                        'A self-taught Full stack and a Flutter Developer based in Vaishali (IN).\nI love building apps and websites that can solve real-world problems, and add value to society.',
+                        'A self-taught Full stack and a Flutter Developer based in Vaishali (IN).\nI love building apps and websites that can solve real-world problems, \nand add value to society.',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w500),
                       ),
@@ -100,7 +104,10 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           /// Resume
                           FilledButton(
-                              onPressed: () {},
+                              onPressed: () async {
+                                await launchUrl(Uri.parse(
+                                    "https://docs.google.com/document/d/1tdOiWysK3fz6yYDX1QZC-4UPZAzSXpiwaPffWyuYvec/edit?usp=sharing"));
+                              },
                               child: const Text('View Resume')),
                           const SizedBox(
                             width: 10,
@@ -140,9 +147,10 @@ class HomeScreen extends StatelessWidget {
                     primary: false,
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
+                            childAspectRatio: 0.85,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20,
-                            maxCrossAxisExtent: 180),
+                            maxCrossAxisExtent: 170),
                     children: [
                       for (int i = 0; i < skills.length; i++)
                         SkillCard(
@@ -176,7 +184,7 @@ class HomeScreen extends StatelessWidget {
                     primary: false,
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
-                            childAspectRatio: 0.7,
+                            childAspectRatio: 0.72,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20,
                             maxCrossAxisExtent: 350),
@@ -200,81 +208,91 @@ class HomeScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color.fromARGB(255, 240, 208, 161),
-                Color.fromARGB(255, 255, 185, 164),
+                Color.fromARGB(255, 255, 215, 211),
+                Color(0XFFF8EBEB),
               ],
             )),
-            child: Row(
+            child: const Row(
               children: [
-                const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(
+                    'Viresh Dev',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
                     children: [
-                      Text(
-                        'Viresh Dev',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
+                      Icon(Icons.location_on),
                       SizedBox(
-                        height: 5.0,
+                        width: 5.0,
                       ),
-                      Row(
-                        children: [
-                          Icon(Icons.location_on),
-                          SizedBox(
-                            width: 5.0,
-                          ),
-                          Text('Vaishali, Bihar, India'),
-                        ],
-                      ),
+                      Text('Vaishali, Bihar, India'),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.email_rounded),
                       SizedBox(
-                        height: 5.0,
+                        width: 5.0,
                       ),
-                      Row(
-                        children: [
-                          Icon(Icons.email_rounded),
-                          SizedBox(
-                            width: 5.0,
-                          ),
-                          Text('vireshdev5e@gmail.com'),
-                        ],
-                      ),
-                    ]),
-                const Spacer(),
+                      Text('vireshdev5e@gmail.com'),
+                    ],
+                  ),
+                ]),
+                Spacer(),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Text(
+                      'Connect',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     Row(
                       children: [
-                        SvgPicture.asset(
-                          './assets/svg/git.svg',
-                          height: 30,
+                        SocialLink(
+                          url: 'https://github.com/devviresh',
+                          image: './assets/svg/git.svg',
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10.0,
                         ),
-                        SvgPicture.asset(
-                          './assets/svg/ig.svg',
-                          height: 30,
+                        SocialLink(
+                          url: 'https://www.instagram.com/devviresh/',
+                          image: './assets/svg/ig.svg',
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10.0,
                         ),
-                        SvgPicture.asset(
-                          './assets/svg/ln.svg',
-                          height: 30,
+                        SocialLink(
+                          url: 'https://linkedin.com/in/viresh-dev',
+                          image: './assets/svg/ln.svg',
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10.0,
                         ),
-                        SvgPicture.asset(
-                          './assets/svg/x.svg',
-                          height: 30,
+                        SocialLink(
+                          url: 'https://twitter.com/dev_viresh',
+                          image: './assets/svg/x.svg',
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10.0,
                         ),
-                        SvgPicture.asset(
-                          './assets/svg/fb.svg',
-                          height: 30,
+                        SocialLink(
+                          url: '',
+                          image: './assets/svg/fb.svg',
+                        ),
+                        SizedBox(
+                          width: 10.0,
                         ),
                       ],
                     ),
@@ -292,6 +310,32 @@ class HomeScreen extends StatelessWidget {
       //   child: const Icon(Icons.connect_without_contact_rounded),
       //   onPressed: () {},
       // ),
+    );
+  }
+}
+
+class SocialLink extends StatelessWidget {
+  const SocialLink({
+    super.key,
+    required this.url,
+    required this.image,
+  });
+
+  final String url;
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: url.isEmpty
+          ? null
+          : () async {
+              await launchUrl(Uri.parse(url));
+            },
+      child: SvgPicture.asset(
+        image,
+        height: 30,
+      ),
     );
   }
 }
