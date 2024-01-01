@@ -58,7 +58,7 @@ final List<Project> projects = [
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
     techStacks: ['Flutter', 'Firebase', 'NodeJS', 'AWS'],
-    liveUrl: 'http://apcwebuat.demoserver25.com/login',
+    liveUrl: 'http://apcwebuat.demoserver25.com/',
     githubUrl: '',
   ),
   Project(

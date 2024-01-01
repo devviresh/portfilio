@@ -184,10 +184,10 @@ class HomeScreen extends StatelessWidget {
                     primary: false,
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
-                            childAspectRatio: 0.72,
-                            crossAxisSpacing: 20,
-                            mainAxisSpacing: 20,
-                            maxCrossAxisExtent: 350),
+                            childAspectRatio: 0.7,
+                            crossAxisSpacing: 30,
+                            mainAxisSpacing: 30,
+                            maxCrossAxisExtent: 360),
                     children: [
                       for (int i = 0; i < projects.length; i++)
                         ProjectCard(
