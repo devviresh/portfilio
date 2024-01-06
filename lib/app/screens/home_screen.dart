@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
+import 'package:my_portfolio/app/models/services.dart';
 import 'package:my_portfolio/app/models/skills.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -14,12 +16,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepOrange.withAlpha(10),
         leadingWidth: 240,
-        bottom: const PreferredSize(
-            preferredSize: Size.fromHeight(1),
-            child: Divider(
-              height: 1,
-            )),
+        // bottom: const PreferredSize(
+        //     preferredSize: Size.fromHeight(1),
+        //     child: Divider(
+        //       height: 1,
+        //     )),
         elevation: 5.0,
 
         /// Logo
@@ -194,11 +197,59 @@ class HomeScreen extends StatelessWidget {
                           project: projects[i],
                         ),
                     ]),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 130),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black26),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: const Text('View More'),
+                  ),
+                )
               ],
             ),
           ),
 
           /// Services
+          Container(
+            color: Colors.blue.withAlpha(10),
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 220),
+            child: Column(
+              children: [
+                const Text(
+                  'Services',
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                GridView(
+                    shrinkWrap: true,
+                    primary: false,
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                            childAspectRatio: 0.9,
+                            crossAxisSpacing: 30,
+                            mainAxisSpacing: 30,
+                            maxCrossAxisExtent: 360),
+                    children: [
+                      for (int i = 0; i < services.length; i++)
+                        ServiceCard(
+                          service: services[i],
+                        )
+                    ]),
+                const SizedBox(
+                  height: 30.0,
+                ),
+              ],
+            ),
+          ),
 
           /// Bottom bar
           Container(
@@ -310,6 +361,42 @@ class HomeScreen extends StatelessWidget {
       //   child: const Icon(Icons.connect_without_contact_rounded),
       //   onPressed: () {},
       // ),
+    );
+  }
+}
+
+class ServiceCard extends StatelessWidget {
+  const ServiceCard({
+    super.key,
+    required this.service,
+  });
+
+  final Service service;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(
+            child: Lottie.asset(
+          service.path,
+          fit: BoxFit.fill,
+        )),
+        const SizedBox(
+          height: 20,
+        ),
+        Text(
+          service.name,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          service.about,
+          textAlign: TextAlign.center,
+        )
+      ],
     );
   }
 }

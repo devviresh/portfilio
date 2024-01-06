@@ -20,7 +20,7 @@ final List<Project> projects = [
     imagePath: './assets/image/ccbcet.png',
     title: 'CodeChef BCET Chapter Website',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+        'Official Website of CodeChef BCET Chapter.\nUsers can check CodeChef Proile, Ranklist, Events, Contests and Get Resources',
     techStacks: ['React', 'Firebase', 'Tailwind CSS'],
     liveUrl: 'https://codechefbcetchapter.netlify.app/',
     githubUrl: 'https://github.com/CodeChef-BCET-Chapter/ccbcet-website',
@@ -29,7 +29,7 @@ final List<Project> projects = [
     imagePath: './assets/image/movie-cite.png',
     title: 'Movie-Cite',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+        'A beautiful designed Flutter app build with Tmdb Api which will give you the updates about upcoming Movies and Tv-series.\nUser can search for their favourite movies, tv series and get more info about their casts, synopsis, gallery etc.',
     techStacks: ['Flutter', 'Firebase', 'Rest API'],
     liveUrl: '',
     githubUrl: '',
@@ -38,7 +38,7 @@ final List<Project> projects = [
     imagePath: './assets/image/climate-x.png',
     title: 'Climate-x',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+        'Get real time weather reports based on Geo-location or search.\n5 day forecast + 2 day Hourly forecast',
     techStacks: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://climate-x.netlify.app/',
     githubUrl: '',
@@ -47,7 +47,7 @@ final List<Project> projects = [
     imagePath: './assets/image/atlas-copco.png',
     title: 'Atlas Copco',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+        'Offers multilingual support in 9 languages.\nGet info about various tools, training, flowchart-based solutions, and support.',
     techStacks: ['Flutter', 'Firebase', 'NodeJs', 'AWS'],
     liveUrl: 'https://sprweb.atlascopco.com/',
     githubUrl: '',
@@ -56,7 +56,7 @@ final List<Project> projects = [
     imagePath: './assets/image/apc.png',
     title: 'APC Revision AID',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+        'Users can set up profiles, access resources, practice Q&A tests, and receive results history & charts based on performance.',
     techStacks: ['Flutter', 'Firebase', 'NodeJS', 'AWS'],
     liveUrl: 'http://apcwebuat.demoserver25.com/',
     githubUrl: '',
@@ -65,7 +65,7 @@ final List<Project> projects = [
     imagePath: './assets/image/templify.png',
     title: 'Templify',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+        'A Flutter web app to manage users and display details in an advanced data table with CRUD operations. Users can create multiple profiles that can be exported as Resumes in PDF format.',
     techStacks: ['Flutter', 'NodeJS', 'Rest API', 'MongoDB'],
     liveUrl: 'http://templify.demoserver23.com/',
     githubUrl: 'githubUrl',

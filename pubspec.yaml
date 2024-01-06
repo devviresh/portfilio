@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.9
   url_launcher: ^6.2.2
+  flip_card: ^0.7.0
+  lottie: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +66,7 @@ flutter:
   assets:
     - assets/image/
     - assets/svg/
+    - assets/gif/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -22,7 +22,8 @@ class _ProjectCardState extends State<ProjectCard> {
   Widget build(BuildContext context) {
     return Transform.scale(
       scale: isHovered ? 1.01 : 1.0,
-      child: Container(
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 300),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
