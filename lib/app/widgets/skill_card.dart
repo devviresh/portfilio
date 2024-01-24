@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/models/skills.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SkillCard extends StatefulWidget {
   const SkillCard({
@@ -35,6 +36,7 @@ class _SkillCardState extends State<SkillCard> {
         side: CardSide.FRONT,
         back: SkillBack(
           description: widget.skill.description,
+          url: widget.skill.url,
         ),
         front: SkillFront(isHovered: isHovered, widget: widget),
       ),
@@ -43,28 +45,52 @@ class _SkillCardState extends State<SkillCard> {
 }
 
 class SkillBack extends StatelessWidget {
-  const SkillBack({super.key, required this.description});
+  const SkillBack({super.key, required this.description, required this.url});
 
   final String description;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-          color: AppColors.blueAccent,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.primary.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 10,
-              offset: const Offset(1, 3),
-            ),
-          ]),
+    return Stack(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+              color: AppColors.blueAccent,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.primary.withOpacity(0.2),
+                  spreadRadius: 2,
+                  blurRadius: 10,
+                  offset: const Offset(1, 3),
+                ),
+              ]),
 
-      /// 100 characters
-      child: Text(description),
+          /// 100 characters
+          child: Text(
+            description,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 8,
+          ),
+        ),
+        if (url.isNotEmpty)
+          Positioned(
+              bottom: 5,
+              right: 5,
+              child: IconButton.filled(
+                onPressed: () async {
+                  await launchUrl(
+                    Uri.parse(url),
+                  );
+                },
+                icon: const Icon(
+                  Icons.arrow_circle_right,
+                  // color: AppColors.primaryDark,
+                ),
+              ))
+      ],
     );
   }
 }

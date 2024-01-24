@@ -38,7 +38,7 @@ final List<Project> projects = [
     imagePath: './assets/image/climate-x.png',
     title: 'Climate-x',
     description:
-        'Get real time weather reports based on Geo-location or search.\n5 day forecast + 2 day Hourly forecast',
+        'Get real time weather reports based on Geo-location or search.\nDisplays 5 day forecast + 2 day Hourly forecast',
     techStacks: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://climate-x.netlify.app/',
     githubUrl: 'https://github.com/devviresh/climate-x',

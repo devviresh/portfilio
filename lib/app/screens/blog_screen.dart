@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/bottom_bar.dart';
 import '../widgets/navbar.dart';
 import 'under_construction.dart';
 
@@ -10,7 +11,23 @@ class BlogScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: NavBar(),
-      body: UnderConstructions(),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Blogs',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+          ),
+
+          Expanded(child: UnderConstructions()),
+
+          /// Bottom Bar
+          BottomBar(),
+        ],
+      ),
     );
   }
 }

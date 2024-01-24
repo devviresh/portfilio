@@ -33,7 +33,11 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
       ),
 
       /// Name
-      title: const Text('Viresh Dev'),
+      title: const Text(
+        'Viresh Dev',
+        style: TextStyle(
+            color: AppColors.primaryDark, fontWeight: FontWeight.w500),
+      ),
 
       /// Pages
       actions: [
