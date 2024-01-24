@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../models/projects.dart';
+import '../../models/projects.dart';
 
 class ProjectCardHorizontal extends StatefulWidget {
   const ProjectCardHorizontal({
@@ -50,7 +50,7 @@ class _ProjectCardState extends State<ProjectCardHorizontal> {
           child: Row(
             children: [
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -67,7 +67,7 @@ class _ProjectCardState extends State<ProjectCardHorizontal> {
                 ),
               ),
               Expanded(
-                flex: 5,
+                flex: 7,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(

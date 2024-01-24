@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/app/widgets/navbar.dart';
+import 'package:my_portfolio/app/widgets/nav/navbar.dart';
 
 import '../widgets/bottom_bar.dart';
-import 'under_construction.dart';
+import 'error/under_construction.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});

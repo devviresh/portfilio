@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/screens/home_screen.dart';
-import 'package:my_portfolio/app/screens/project_screen.dart';
 
 void main() {
   runApp(const MyApp());

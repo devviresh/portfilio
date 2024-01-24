@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../models/projects.dart';
+import '../../models/projects.dart';
 
 class ProjectCard extends StatefulWidget {
   const ProjectCard({
@@ -50,22 +50,24 @@ class _ProjectCardState extends State<ProjectCard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
+              Flexible(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
                   ),
-                ),
-                height: 220,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                  ),
-                  child: Image.asset(
-                    widget.project.imagePath,
-                    fit: BoxFit.fill,
+                  height: 220,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
+                    child: Image.asset(
+                      widget.project.imagePath,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
