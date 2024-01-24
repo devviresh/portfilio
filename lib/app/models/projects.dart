@@ -32,7 +32,7 @@ final List<Project> projects = [
         'A beautiful designed Flutter app build with Tmdb Api which will give you the updates about upcoming Movies and Tv-series.\nUser can search for their favourite movies, tv series and get more info about their casts, synopsis, gallery etc.',
     techStacks: ['Flutter', 'Firebase', 'Rest API'],
     liveUrl: '',
-    githubUrl: '',
+    githubUrl: 'https://github.com/devviresh/movie-cite',
   ),
   Project(
     imagePath: './assets/image/climate-x.png',
@@ -41,7 +41,7 @@ final List<Project> projects = [
         'Get real time weather reports based on Geo-location or search.\n5 day forecast + 2 day Hourly forecast',
     techStacks: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://climate-x.netlify.app/',
-    githubUrl: '',
+    githubUrl: 'https://github.com/devviresh/climate-x',
   ),
   Project(
     imagePath: './assets/image/atlas-copco.png',
@@ -68,6 +68,6 @@ final List<Project> projects = [
         'A Flutter web app to manage users and display details in an advanced data table with CRUD operations. Users can create multiple profiles that can be exported as Resumes in PDF format.',
     techStacks: ['Flutter', 'NodeJS', 'Rest API', 'MongoDB'],
     liveUrl: 'http://templify.demoserver23.com/',
-    githubUrl: 'githubUrl',
+    githubUrl: '',
   ),
 ];

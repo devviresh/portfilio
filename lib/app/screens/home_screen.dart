@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:lottie/lottie.dart';
+import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/models/services.dart';
 import 'package:my_portfolio/app/models/skills.dart';
+import 'package:my_portfolio/app/models/socials.dart';
+import 'package:my_portfolio/app/screens/project_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../models/projects.dart';
+import '../widgets/navbar.dart';
 import '../widgets/project_card.dart';
+import '../widgets/service_card.dart';
 import '../widgets/skill_card.dart';
+import '../widgets/social_link.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,58 +18,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange.withAlpha(10),
-        leadingWidth: 240,
-        // bottom: const PreferredSize(
-        //     preferredSize: Size.fromHeight(1),
-        //     child: Divider(
-        //       height: 1,
-        //     )),
-        elevation: 5.0,
-
-        /// Logo
-        leading: Row(
-          children: [
-            const SizedBox(
-              width: 200,
-            ),
-            CircleAvatar(
-              backgroundColor: Colors.black54,
-              child: Padding(
-                padding: const EdgeInsets.all(2.0),
-                child: Image.asset('./assets/image/vd.png'),
-              ),
-            )
-          ],
-        ),
-
-        /// Name
-        title: const Text('Viresh Dev'),
-
-        /// Pages
-        actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Text('About'),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Projects'),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Blog'),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Contact'),
-          ),
-          const SizedBox(
-            width: 200,
-          ),
-        ],
-      ),
+      appBar: const NavBar(),
       body: ListView(
         padding: const EdgeInsets.only(top: 100),
         children: [
@@ -79,7 +31,15 @@ class HomeScreen extends StatelessWidget {
                 /// Profile
                 CircleAvatar(
                   radius: 150,
-                  child: Image.asset('./assets/image/profile.png'),
+                  backgroundColor: AppColors.primaryDark,
+                  child: CircleAvatar(
+                    radius: 148,
+                    backgroundColor: AppColors.secondary,
+                    child: CircleAvatar(
+                      radius: 146,
+                      child: Image.asset('./assets/image/profile.png'),
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   width: 100,
@@ -134,7 +94,7 @@ class HomeScreen extends StatelessWidget {
 
           /// Skills
           Container(
-            color: Colors.deepOrange.withAlpha(10),
+            color: AppColors.blueAccent,
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 220),
             child: Column(
               children: [
@@ -201,12 +161,18 @@ class HomeScreen extends StatelessWidget {
                   height: 30.0,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProjectScreen()),
+                    );
+                  },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         vertical: 15, horizontal: 130),
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black26),
+                      border: Border.all(color: AppColors.blueBorder),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: const Text('View More'),
@@ -218,7 +184,7 @@ class HomeScreen extends StatelessWidget {
 
           /// Services
           Container(
-            color: Colors.blue.withAlpha(10),
+            color: AppColors.blueAccent,
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 220),
             child: Column(
               children: [
@@ -259,92 +225,67 @@ class HomeScreen extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color.fromARGB(255, 255, 215, 211),
-                Color(0XFFF8EBEB),
+                AppColors.secondary,
+                AppColors.secondary,
               ],
             )),
-            child: const Row(
+            child: Row(
               children: [
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(
-                    'Viresh Dev',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  Row(
+                const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.location_on),
-                      SizedBox(
-                        width: 5.0,
+                      Text(
+                        'Viresh Dev',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Text('Vaishali, Bihar, India'),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.email_rounded),
                       SizedBox(
-                        width: 5.0,
+                        height: 5.0,
                       ),
-                      Text('vireshdev5e@gmail.com'),
-                    ],
-                  ),
-                ]),
-                Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.location_on),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('Vaishali, Bihar, India'),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.email_rounded),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('vireshdev5e@gmail.com'),
+                        ],
+                      ),
+                    ]),
+                const Spacer(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Connect',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     Row(
                       children: [
-                        SocialLink(
-                          url: 'https://github.com/devviresh',
-                          image: './assets/svg/git.svg',
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        SocialLink(
-                          url: 'https://www.instagram.com/devviresh/',
-                          image: './assets/svg/ig.svg',
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        SocialLink(
-                          url: 'https://linkedin.com/in/viresh-dev',
-                          image: './assets/svg/ln.svg',
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        SocialLink(
-                          url: 'https://twitter.com/dev_viresh',
-                          image: './assets/svg/x.svg',
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        SocialLink(
-                          url: '',
-                          image: './assets/svg/fb.svg',
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
+                        for (int i = 0; i < socials.length; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: SocialLink(
+                              social: socials[i],
+                            ),
+                          ),
                       ],
                     ),
                   ],
@@ -354,74 +295,12 @@ class HomeScreen extends StatelessWidget {
           ),
 
           /// Copyright
-          AppBar()
+          AppBar(
+            backgroundColor: AppColors.secondary,
+            centerTitle: true,
+            title: const Text('END OF THE ERA!'),
+          )
         ],
-      ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: const Icon(Icons.connect_without_contact_rounded),
-      //   onPressed: () {},
-      // ),
-    );
-  }
-}
-
-class ServiceCard extends StatelessWidget {
-  const ServiceCard({
-    super.key,
-    required this.service,
-  });
-
-  final Service service;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-            child: Lottie.asset(
-          service.path,
-          fit: BoxFit.fill,
-        )),
-        const SizedBox(
-          height: 20,
-        ),
-        Text(
-          service.name,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Text(
-          service.about,
-          textAlign: TextAlign.center,
-        )
-      ],
-    );
-  }
-}
-
-class SocialLink extends StatelessWidget {
-  const SocialLink({
-    super.key,
-    required this.url,
-    required this.image,
-  });
-
-  final String url;
-  final String image;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: url.isEmpty
-          ? null
-          : () async {
-              await launchUrl(Uri.parse(url));
-            },
-      child: SvgPicture.asset(
-        image,
-        height: 30,
       ),
     );
   }

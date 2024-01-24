@@ -1,6 +1,7 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/models/skills.dart';
 
 class SkillCard extends StatefulWidget {
@@ -51,11 +52,11 @@ class SkillBack extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-          color: const Color(0XFFFFF4F6),
+          color: AppColors.blueAccent,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: AppColors.primary.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 10,
               offset: const Offset(1, 3),
@@ -82,15 +83,15 @@ class SkillFront extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      transform: Matrix4.identity()..rotateY(isHovered ? 0.4 : 0),
+      // transform: Matrix4.identity()..rotateY(isHovered ? 0.4 : 0),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0XFFFFF4F6),
+        color: AppColors.blueAccent,
         borderRadius: BorderRadius.circular(10),
         boxShadow: isHovered
             ? [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
+                  color: AppColors.primary.withOpacity(0.2),
                   spreadRadius: 2,
                   blurRadius: 10,
                   offset: const Offset(1, 3),

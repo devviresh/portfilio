@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../models/projects.dart';
@@ -23,15 +24,15 @@ class _ProjectCardState extends State<ProjectCard> {
     return Transform.scale(
       scale: isHovered ? 1.01 : 1.0,
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.black26),
+          border: Border.all(color: AppColors.blueBorder),
           boxShadow: isHovered
               ? [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: AppColors.primary.withOpacity(0.3),
                     spreadRadius: 5,
                     blurRadius: 7,
                     offset: const Offset(0, 3),
@@ -50,9 +51,8 @@ class _ProjectCardState extends State<ProjectCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                decoration: BoxDecoration(
-                  color: Colors.amber[50],
-                  borderRadius: const BorderRadius.only(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
                   ),
@@ -76,8 +76,8 @@ class _ProjectCardState extends State<ProjectCard> {
                   children: [
                     Text(
                       widget.project.title,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     Text(
                       widget.project.description,
@@ -87,14 +87,16 @@ class _ProjectCardState extends State<ProjectCard> {
                     const SizedBox(
                       height: 15.0,
                     ),
-                    Text(
+                    const Text(
                       'Tech Stacks',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.deepOrange[400]),
+                          color: AppColors.primary),
                       textAlign: TextAlign.center,
                     ),
-                    const Divider(),
+                    const Divider(
+                      color: AppColors.blueBorder,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -104,7 +106,9 @@ class _ProjectCardState extends State<ProjectCard> {
                           Text(widget.project.techStacks[j]),
                       ],
                     ),
-                    const Divider(),
+                    const Divider(
+                      color: AppColors.blueBorder,
+                    ),
                     const SizedBox(
                       height: 10.0,
                     ),
