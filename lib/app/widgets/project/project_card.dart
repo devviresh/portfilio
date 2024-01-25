@@ -87,7 +87,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(
-                      height: 15.0,
+                      height: 20.0,
                     ),
                     const Text(
                       'Tech Stacks',

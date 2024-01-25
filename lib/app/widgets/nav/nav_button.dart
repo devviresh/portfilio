@@ -47,7 +47,7 @@ final List<Widget> navigation = [
     text: 'Blog',
     screen: BlogScreen(),
   ),
-  const NavButton(
+  NavButton(
     text: 'Contact',
     screen: ContactScreen(),
   ),

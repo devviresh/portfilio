@@ -20,39 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
-      // onGenerateRoute: (settings) {
-      //   return CustomPageRoute(
-      //     builder: (context) => HomeScreen(),
-      //     settings: settings,
-      //   );
-      // }
-      home: const ContactScreen(),
+      home: ContactScreen(),
     );
   }
 }
-
-
-// class CustomPageRoute<T> extends MaterialPageRoute<T> {
-//   CustomPageRoute({
-//     required WidgetBuilder builder,
-//     RouteSettings? settings,
-//   }) : super(builder: builder, settings: settings);
-
-//   @override
-//   Widget buildTransitions(
-//     BuildContext context,
-//     Animation<double> animation,
-//     Animation<double> secondaryAnimation,
-//     Widget child,
-//   ) {
-//     const begin = 0.0;
-//     const end = 1.0;
-//     var tween = Tween(begin: begin, end: end);
-//     var opacityAnimation = tween.animate(animation);
-
-//     return FadeTransition(
-//       opacity: opacityAnimation,
-//       child: child,
-//     );
-//   }
-// }

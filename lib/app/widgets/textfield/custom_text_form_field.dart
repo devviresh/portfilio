@@ -9,17 +9,23 @@ class CustomTextFormField extends StatelessWidget {
     required this.label,
     required this.icon,
     this.isRequired = false,
+    this.validator,
+    this.controller,
   });
 
   final String hint;
   final String label;
   final IconData icon;
   final bool isRequired;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: TextFormField(
+        controller: controller,
+        validator: validator,
         decoration: InputDecoration(
             prefixIcon: Icon(icon),
             prefixIconColor: AppColors.primaryDark,
@@ -27,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
                 borderSide: BorderSide(color: AppColors.blueBorder)),
             focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: AppColors.primary)),
+            border: const OutlineInputBorder(),
             hintText: hint,
             label: Row(
               mainAxisSize: MainAxisSize.min,
