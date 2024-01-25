@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                             /// Contact form
                             FilledButton.tonal(
                                 onPressed: () {},
-                                child: const Text('Contact me')),
+                                child: const Text('Get in Touch')),
                           ],
                         )
                       ],
@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const Text(
-                        'Skills',
+                        'Tech Skills',
                         style: TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w500),
                       ),

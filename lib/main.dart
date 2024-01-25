@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
+import 'package:my_portfolio/app/screens/contact_screen.dart';
 import 'package:my_portfolio/app/screens/home_screen.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       //     settings: settings,
       //   );
       // }
-      home: const HomeScreen(),
+      home: const ContactScreen(),
     );
   }
 }
