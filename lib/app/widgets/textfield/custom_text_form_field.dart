@@ -22,31 +22,29 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextFormField(
-        controller: controller,
-        validator: validator,
-        decoration: InputDecoration(
-            prefixIcon: Icon(icon),
-            prefixIconColor: AppColors.primaryDark,
-            enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.blueBorder)),
-            focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.primary)),
-            border: const OutlineInputBorder(),
-            hintText: hint,
-            label: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(label),
-                if (isRequired)
-                  const Text(
-                    '*',
-                    style: TextStyle(color: AppColors.red),
-                  )
-              ],
-            )),
-      ),
+    return TextFormField(
+      controller: controller,
+      validator: validator,
+      decoration: InputDecoration(
+          prefixIcon: Icon(icon),
+          prefixIconColor: AppColors.primaryDark,
+          enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.blueBorder)),
+          focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.primary)),
+          border: const OutlineInputBorder(),
+          hintText: hint,
+          label: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(label),
+              if (isRequired)
+                const Text(
+                  '*',
+                  style: TextStyle(color: AppColors.red),
+                )
+            ],
+          )),
     );
   }
 }

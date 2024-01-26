@@ -1,54 +1,57 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/theme.dart';
 import '../../screens/about/about_screen.dart';
 import '../../screens/blog/blog_screen.dart';
 import '../../screens/contact/contact_screen.dart';
 import '../../screens/home/home_screen.dart';
 import '../../screens/project/project_screen.dart';
 
-class NavButton extends StatelessWidget {
-  const NavButton({
+class NavDrawerTile extends StatelessWidget {
+  const NavDrawerTile({
     super.key,
-    required this.text,
+    required this.name,
     required this.screen,
   });
 
-  final String text;
+  final String name;
   final Widget screen;
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
+    return ListTile(
+      textColor: AppColors.primaryDark,
+      onTap: () {
+        Navigator.pop(context);
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => screen),
         );
       },
-      child: Text(text),
+      title: Text(name),
     );
   }
 }
 
-final List<NavButton> navigation = [
-  const NavButton(
-    text: 'Home',
+final List<NavDrawerTile> drawerTiles = [
+  const NavDrawerTile(
+    name: 'Home',
     screen: HomeScreen(),
   ),
-  const NavButton(
-    text: 'About',
+  const NavDrawerTile(
+    name: 'About',
     screen: AboutScreen(),
   ),
-  const NavButton(
-    text: 'Projects',
+  const NavDrawerTile(
+    name: 'Projects',
     screen: ProjectScreen(),
   ),
-  const NavButton(
-    text: 'Blog',
+  const NavDrawerTile(
+    name: 'Blog',
     screen: BlogScreen(),
   ),
-  const NavButton(
-    text: 'Contact',
+  const NavDrawerTile(
+    name: 'Contact',
     screen: ContactScreen(),
   ),
 ];

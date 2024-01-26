@@ -94,3 +94,12 @@ class SBW10 extends StatelessWidget {
     return const ScalableSB(width: 10);
   }
 }
+
+class SBW50 extends StatelessWidget {
+  const SBW50({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const ScalableSB(width: 50);
+  }
+}

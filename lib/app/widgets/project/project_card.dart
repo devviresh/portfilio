@@ -26,7 +26,7 @@ class _ProjectCardState extends State<ProjectCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.blueAccent,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: AppColors.blueBorder),
           boxShadow: isHovered

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/constants/custom_sized_box.dart';
 
+import '../constants/responsive.dart';
 import '../constants/theme.dart';
 import '../models/socials.dart';
 import 'social_link.dart';
@@ -28,7 +30,9 @@ class BottomBar extends StatelessWidget {
             child: Container(
               constraints: const BoxConstraints(maxWidth: 1150),
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
-              child: Row(
+              child: Flex(
+                direction:
+                    Screen.isMobile(context) ? Axis.vertical : Axis.horizontal,
                 children: [
                   const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +67,7 @@ class BottomBar extends StatelessWidget {
                           ],
                         ),
                       ]),
-                  const Spacer(),
+                  Screen.isMobile(context) ? const SBH20() : const Spacer(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,6 +112,7 @@ class BottomBar extends StatelessWidget {
             'END OF THE ERA!',
             style: TextStyle(color: AppColors.primaryDark),
           ),
+          actions: [Container()],
         )
       ],
     );

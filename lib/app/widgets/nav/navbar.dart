@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../constants/responsive.dart';
 import '../../constants/theme.dart';
 import 'nav_button.dart';
 
@@ -15,13 +16,14 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
       /// Name
       title: Container(
         constraints: const BoxConstraints(maxWidth: 1150),
-        padding: const EdgeInsets.symmetric(horizontal: 30),
+        padding:
+            EdgeInsets.symmetric(horizontal: Screen.isWeb(context) ? 30 : 0),
         child: Row(
           children: [
             CircleAvatar(
               backgroundColor: AppColors.primaryDark,
               child: Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(3.0),
                 child: Image.asset('./assets/image/vd.png'),
               ),
             ),
@@ -34,10 +36,20 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                   color: AppColors.primaryDark, fontWeight: FontWeight.w500),
             ),
             const Spacer(),
-            ...navigation
+            if (Screen.isWeb(context)) ...navigation,
+            if (!Screen.isWeb(context))
+              IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                  icon: const Icon(
+                    Icons.menu_rounded,
+                    color: AppColors.primaryDark,
+                  ))
           ],
         ),
       ),
+      actions: [Container()],
     );
   }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
-import 'package:my_portfolio/app/screens/contact_screen.dart';
-import 'package:my_portfolio/app/screens/home_screen.dart';
+import 'package:my_portfolio/app/screens/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
-      home: ContactScreen(),
+      home: const HomeScreen(),
     );
   }
 }

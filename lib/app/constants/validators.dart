@@ -1,4 +1,3 @@
-import 'dart:js';
 
 String? isValidName(value) {
   if (value == null || value.isEmpty) {

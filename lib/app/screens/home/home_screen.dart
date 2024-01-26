@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/constants/custom_sized_box.dart';
+import 'package:my_portfolio/app/constants/responsive.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/models/services.dart';
 import 'package:my_portfolio/app/models/skills.dart';
-import 'package:my_portfolio/app/screens/project_screen.dart';
+import 'package:my_portfolio/app/screens/contact/contact_screen.dart';
+import 'package:my_portfolio/app/screens/project/project_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../models/projects.dart';
-import '../widgets/bottom_bar.dart';
-import '../widgets/nav/navbar.dart';
-import '../widgets/project/project_card.dart';
-import '../widgets/service_card.dart';
-import '../widgets/skill/skill_card.dart';
+import '../../models/projects.dart';
+import '../../widgets/bottom_bar.dart';
+import '../../widgets/nav/nav_drawer.dart';
+import '../../widgets/nav/navbar.dart';
+import '../../widgets/project/project_card.dart';
+import '../../widgets/service_card.dart';
+import '../../widgets/skill/skill_card.dart';
+import 'widgets/intro_widget.dart';
+import 'widgets/profile_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,6 +24,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NavBar(),
+      endDrawer: const NavDrawer(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,68 +32,35 @@ class HomeScreen extends StatelessWidget {
             /// Heading
             Container(
               constraints: const BoxConstraints(maxWidth: 1150),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 100, horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              padding: EdgeInsets.symmetric(
+                vertical: Screen.isWeb(context) ? 100 : 50,
+                horizontal: 30,
+              ),
+              child: Flex(
+                direction:
+                    Screen.isWeb(context) ? Axis.horizontal : Axis.vertical,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   /// Profile
-                  CircleAvatar(
-                    radius: 150,
-                    backgroundColor: AppColors.primaryDark,
-                    child: CircleAvatar(
-                      radius: 148,
-                      backgroundColor: AppColors.secondary,
-                      child: CircleAvatar(
-                        radius: 146,
-                        child: Image.asset('./assets/image/profile.png'),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 100,
-                  ),
+                  Screen.isWeb(context)
+                      ? const Flexible(
+                          child: ProfileWidget(
+                            size: 150,
+                          ),
+                        )
+                      : const ProfileWidget(
+                          size: 120,
+                        ),
+
+                  Screen.isWeb(context) ? const SBW50() : const SBH50(),
 
                   /// Introduction
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'I\'m Viresh Dev',
-                          style: TextStyle(
-                              fontSize: 50.0, fontWeight: FontWeight.bold),
-                        ),
-                        const Text(
-                          'A self-taught Full stack and a Flutter Developer based in Vaishali (IN).\nI love building apps and websites that can solve real-world problems, \nand add value to society.',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                        const SizedBox(
-                          height: 50.0,
-                        ),
-                        Row(
-                          children: [
-                            /// Resume
-                            FilledButton(
-                                onPressed: () async {
-                                  await launchUrl(Uri.parse(
-                                      "https://docs.google.com/document/d/1tdOiWysK3fz6yYDX1QZC-4UPZAzSXpiwaPffWyuYvec/edit?usp=sharing"));
-                                },
-                                child: const Text('View Resume')),
-                            const SizedBox(
-                              width: 10,
-                            ),
-
-                            /// Contact form
-                            FilledButton.tonal(
-                                onPressed: () {},
-                                child: const Text('Get in Touch')),
-                          ],
+                  Screen.isWeb(context)
+                      ? const Flexible(
+                          flex: 2,
+                          child: IntroWidget(),
                         )
-                      ],
-                    ),
-                  ),
+                      : const IntroWidget()
                 ],
               ),
             ),

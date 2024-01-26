@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app/constants/custom_sized_box.dart';
 import 'package:my_portfolio/app/models/projects.dart';
 import 'package:my_portfolio/app/widgets/bottom_bar.dart';
 
-import '../widgets/nav/navbar.dart';
-import '../widgets/project/project_card_horizontal.dart';
+import '../../widgets/nav/nav_drawer.dart';
+import '../../widgets/nav/navbar.dart';
+import '../../widgets/project/project_card_horizontal.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({super.key});
@@ -12,6 +14,7 @@ class ProjectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NavBar(),
+      endDrawer: const NavDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -35,7 +38,7 @@ class ProjectScreen extends StatelessWidget {
                   return ProjectCardHorizontal(project: projects[index]);
                 },
                 separatorBuilder: (context, index) =>
-                    const SizedBox(height: 20.0), // Adjust the height as needed
+                    const SBH30(), // Adjust the height as needed
               ),
             ),
             const SizedBox(

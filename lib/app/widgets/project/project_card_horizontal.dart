@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../constants/responsive.dart';
 import '../../models/projects.dart';
 
 class ProjectCardHorizontal extends StatefulWidget {
@@ -47,90 +48,169 @@ class _ProjectCardState extends State<ProjectCardHorizontal> {
               isHovered = hover;
             });
           },
-          child: Row(
-            children: [
-              Expanded(
-                flex: 3,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
+          child: Screen.isWeb(context)
+              ? Row(
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10),
+                          ),
+                        ),
+                        // height: double.infinity,
+                        // width: 400,
+                        child: Image.asset(
+                          widget.project.imagePath,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
-                  ),
-                  // height: double.infinity,
-                  // width: 400,
-                  child: Image.asset(
-                    widget.project.imagePath,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 7,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.project.title,
-                        style: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600),
+                    Expanded(
+                      flex: 7,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.project.title,
+                              style: const TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              widget.project.description,
+                              // maxLines: 3,
+                              // overflow: TextOverflow.ellipsis,
+                            ),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            const Text(
+                              'Tech Stacks',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primary),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(widget.project.techStacks.join(', ')),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                /// Preview
+                                FilledButton(
+                                  onPressed: widget.project.liveUrl.isEmpty
+                                      ? () {}
+                                      : () async {
+                                          await launchUrl(
+                                            Uri.parse(widget.project.liveUrl),
+                                          );
+                                        },
+                                  child: const Text('Live Preview'),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+
+                                /// Github Link
+                                IconButton.filledTonal(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.code),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                      const SizedBox(
-                        height: 5.0,
+                    )
+                  ],
+                )
+              : Column(
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                        ),
                       ),
-                      Text(
-                        widget.project.description,
-                        // maxLines: 3,
-                        // overflow: TextOverflow.ellipsis,
+                      // height: double.infinity,
+                      // width: 400,
+                      child: Image.asset(
+                        widget.project.imagePath,
+                        fit: BoxFit.fill,
                       ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      const Text(
-                        'Tech Stacks',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primary),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(widget.project.techStacks.join(', ')),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          /// Preview
-                          FilledButton(
-                            onPressed: widget.project.liveUrl.isEmpty
-                                ? () {}
-                                : () async {
-                                    await launchUrl(
-                                      Uri.parse(widget.project.liveUrl),
-                                    );
-                                  },
-                            child: const Text('Live Preview'),
+                          Text(
+                            widget.project.title,
+                            style: const TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w600),
                           ),
                           const SizedBox(
-                            width: 10,
+                            height: 5.0,
                           ),
+                          Text(
+                            widget.project.description,
+                            // maxLines: 3,
+                            // overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          const Text(
+                            'Tech Stacks',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primary),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(widget.project.techStacks.join(', ')),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              /// Preview
+                              FilledButton(
+                                onPressed: widget.project.liveUrl.isEmpty
+                                    ? () {}
+                                    : () async {
+                                        await launchUrl(
+                                          Uri.parse(widget.project.liveUrl),
+                                        );
+                                      },
+                                child: const Text('Live Preview'),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
 
-                          /// Github Link
-                          IconButton.filledTonal(
-                            onPressed: () {},
-                            icon: const Icon(Icons.code),
-                          ),
+                              /// Github Link
+                              IconButton.filledTonal(
+                                onPressed: () {},
+                                icon: const Icon(Icons.code),
+                              ),
+                            ],
+                          )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          ),
         ),
       ),
     );
