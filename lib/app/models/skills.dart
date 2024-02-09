@@ -17,7 +17,7 @@ final List<Skill> skills = [
     name: 'Html',
     description:
         'Essential for structuring web content, HTML uses tags to define elements on pages, providing the foundation for online information display.',
-    url: '',
+    url: '   kmlkn',
   ),
   Skill(
       logoPath: './assets/svg/css.svg',

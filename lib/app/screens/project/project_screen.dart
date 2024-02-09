@@ -30,7 +30,7 @@ class ProjectScreen extends StatelessWidget {
               constraints: const BoxConstraints(maxWidth: 1150),
               child: ListView.separated(
                 shrinkWrap: true,
-                primary: true,
+                // primary: true,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 itemCount: projects.length,

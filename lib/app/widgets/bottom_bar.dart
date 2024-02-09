@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/custom_sized_box.dart';
-
+import 'package:my_portfolio/app/models/profiles.dart';
 import '../constants/responsive.dart';
 import '../constants/theme.dart';
 import '../models/socials.dart';
+import 'profile_link.dart';
 import 'social_link.dart';
 
 class BottomBar extends StatelessWidget {
@@ -36,6 +37,7 @@ class BottomBar extends StatelessWidget {
                 children: [
                   const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           'Viresh Dev',
@@ -87,6 +89,26 @@ class BottomBar extends StatelessWidget {
                               padding: const EdgeInsets.only(right: 10.0),
                               child: SocialLink(
                                 social: socials[i],
+                              ),
+                            ),
+                        ],
+                      ),
+                      const SBH20(),
+                      const Text(
+                        'Profiles',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w600),
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          for (int i = 0; i < profiles.length; i++)
+                            Padding(
+                              padding: const EdgeInsets.only(right: 10.0),
+                              child: ProfileLink(
+                                profile: profiles[i],
                               ),
                             ),
                         ],

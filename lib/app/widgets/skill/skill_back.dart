@@ -38,15 +38,15 @@ class SkillBack extends StatelessWidget {
           Positioned(
               bottom: 5,
               right: 5,
-              child: IconButton.filled(
+              child: IconButton(
                 onPressed: () async {
                   await launchUrl(
                     Uri.parse(url),
                   );
                 },
                 icon: const Icon(
-                  Icons.arrow_circle_right,
-                  // color: AppColors.primaryDark,
+                  Icons.arrow_circle_right_rounded,
+                  color: AppColors.primaryDark,
                 ),
               ))
       ],

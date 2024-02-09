@@ -31,6 +31,7 @@ class _SkillCardState extends State<SkillCard> {
         });
       },
       child: FlipCard(
+        // flipOnTouch: false,
         fill: Fill.fillBack,
         direction: FlipDirection.HORIZONTAL,
         side: CardSide.FRONT,
@@ -43,5 +44,3 @@ class _SkillCardState extends State<SkillCard> {
     );
   }
 }
-
-
