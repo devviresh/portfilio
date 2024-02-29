@@ -4,11 +4,11 @@ import 'package:my_portfolio/app/constants/responsive.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/constants/validators.dart';
 
-import '../../widgets/bottom_bar.dart';
-import '../../widgets/nav/nav_drawer.dart';
-import '../../widgets/nav/navbar.dart';
-import '../../widgets/textfield/custom_text_area.dart';
-import '../../widgets/textfield/custom_text_form_field.dart';
+import '../../common_widgets/bottom_bar.dart';
+import '../../common_widgets/nav/nav_drawer.dart';
+import '../../common_widgets/nav/navbar.dart';
+import '../../common_widgets/textfield/custom_text_area.dart';
+import '../../common_widgets/textfield/custom_text_form_field.dart';
 import 'widgets/success_widget.dart';
 
 class ContactScreen extends StatefulWidget {

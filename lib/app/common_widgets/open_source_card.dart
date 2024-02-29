@@ -28,15 +28,12 @@ class OpenSourceCard extends StatelessWidget {
           ]),
       child: Row(
         children: [
-          SizedBox(
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  bottomLeft: Radius.circular(10)),
-              child: Image.asset(
-                project.imagePath,
-                fit: BoxFit.fill,
-              ),
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
+            child: Image.asset(
+              project.imagePath,
+              fit: BoxFit.fill,
             ),
           ),
           const SBW10(),

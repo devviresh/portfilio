@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/custom_sized_box.dart';
 import 'package:my_portfolio/app/models/projects.dart';
-import 'package:my_portfolio/app/widgets/bottom_bar.dart';
+import 'package:my_portfolio/app/common_widgets/bottom_bar.dart';
 
-import '../../widgets/nav/nav_drawer.dart';
-import '../../widgets/nav/navbar.dart';
-import '../../widgets/project/project_card_horizontal.dart';
+import '../../common_widgets/nav/nav_drawer.dart';
+import '../../common_widgets/nav/navbar.dart';
+import '../../common_widgets/project/project_card_horizontal.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({super.key});

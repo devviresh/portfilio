@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/bottom_bar.dart';
-import '../../widgets/nav/nav_drawer.dart';
-import '../../widgets/nav/navbar.dart';
+import '../../common_widgets/bottom_bar.dart';
+import '../../common_widgets/nav/nav_drawer.dart';
+import '../../common_widgets/nav/navbar.dart';
 import '../error/under_construction.dart';
 
 class BlogScreen extends StatelessWidget {

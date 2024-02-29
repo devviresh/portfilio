@@ -6,6 +6,10 @@ class Social {
 }
 
 final List<Social> socials = [
+  // Social(
+  //   url: 'https://api.whatsapp.com/send?phone=+916206665898&text=Hello Viresh!',
+  //   icon: './assets/svg/wp.svg',
+  // ),
   Social(
     url: 'https://linkedin.com/in/viresh-dev',
     icon: './assets/svg/ln.svg',
