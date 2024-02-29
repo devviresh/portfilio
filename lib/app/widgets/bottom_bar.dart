@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/custom_sized_box.dart';
 import 'package:my_portfolio/app/models/profiles.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../constants/responsive.dart';
 import '../constants/theme.dart';
 import '../models/socials.dart';
@@ -35,38 +36,62 @@ class BottomBar extends StatelessWidget {
                 direction:
                     Screen.isMobile(context) ? Axis.vertical : Axis.horizontal,
                 children: [
-                  const Column(
+                  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Viresh Dev',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5.0,
                         ),
-                        Row(
-                          children: [
-                            Icon(Icons.location_on),
-                            SizedBox(
-                              width: 5.0,
-                            ),
-                            Text('Vaishali, Bihar, India'),
-                          ],
+                        InkWell(
+                          onTap: () {},
+                          child: const Row(
+                            children: [
+                              Icon(Icons.location_on),
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              Text('Vaishali, Bihar, India'),
+                            ],
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5.0,
                         ),
-                        Row(
-                          children: [
-                            Icon(Icons.email_rounded),
-                            SizedBox(
-                              width: 5.0,
-                            ),
-                            Text('vireshdev5e@gmail.com'),
-                          ],
+                        InkWell(
+                          onTap: () async {
+                            await launchUrl(Uri(
+                              scheme: 'mailto',
+                              path: 'vireshdev5e@gmail.com',
+                            ));
+                          },
+                          child: const Row(
+                            children: [
+                              Icon(Icons.email_rounded),
+                              SBW5(),
+                              SelectableText('vireshdev5e@gmail.com'),
+                            ],
+                          ),
+                        ),
+                        const SBH5(),
+                        InkWell(
+                          onTap: () async {
+                            await launchUrl(
+                              Uri.parse('https://topmate.io/viresh_dev'),
+                            );
+                          },
+                          child: const Row(
+                            children: [
+                              Icon(Icons.calendar_month_rounded),
+                              SBW5(),
+                              SelectableText('topmate.io/viresh_dev'),
+                            ],
+                          ),
                         ),
                       ]),
                   Screen.isMobile(context) ? const SBH20() : const Spacer(),
@@ -95,7 +120,7 @@ class BottomBar extends StatelessWidget {
                       ),
                       const SBH20(),
                       const Text(
-                        'Profiles',
+                        'Coding Profiles',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w600),
                       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/app/constants/custom_sized_box.dart';
 import 'package:my_portfolio/app/constants/responsive.dart';
 import 'package:my_portfolio/app/constants/theme.dart';
+import 'package:my_portfolio/app/models/opensource.dart';
 import 'package:my_portfolio/app/models/services.dart';
 import 'package:my_portfolio/app/models/skills.dart';
 import 'package:my_portfolio/app/screens/project/project_screen.dart';
@@ -9,6 +10,7 @@ import '../../models/projects.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/nav/nav_drawer.dart';
 import '../../widgets/nav/navbar.dart';
+import '../../widgets/open_source_card.dart';
 import '../../widgets/project/project_card.dart';
 import '../../widgets/service_card.dart';
 import '../../widgets/skill/skill_card.dart';
@@ -198,6 +200,48 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+            ),
+
+            /// Open source
+            Container(
+              constraints: const BoxConstraints(maxWidth: 1150),
+              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+              child: Column(
+                children: [
+                  const SBH20(),
+                  const Text(
+                    'Open Source / Freelance',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  GridView.builder(
+                    itemCount: opensources.length,
+                    shrinkWrap: true,
+                    primary: false,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: Screen.isWeb(context)
+                          ? 3
+                          : Screen.isTablet(context)
+                              ? 2
+                              : 1,
+                      childAspectRatio: 3,
+                      crossAxisSpacing: 30,
+                      mainAxisSpacing: 30,
+                    ),
+                    itemBuilder: (context, index) {
+                      return OpenSourceCard(
+                        project: opensources[index],
+                      );
+                    },
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                ],
               ),
             ),
 

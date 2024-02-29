@@ -11,7 +11,7 @@ final List<Social> socials = [
     icon: './assets/svg/ln.svg',
   ),
   Social(
-    url: 'https://www.instagram.com/devviresh/',
+    url: 'https://www.instagram.com/viresh_dev/',
     icon: './assets/svg/ig.svg',
   ),
   Social(

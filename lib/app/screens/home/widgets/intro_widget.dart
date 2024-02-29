@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants/responsive.dart';
-import '../../contact/contact_screen.dart';
 
 class IntroWidget extends StatelessWidget {
   const IntroWidget({
@@ -51,11 +50,9 @@ class IntroWidget extends StatelessWidget {
 
             /// Contact form
             FilledButton.tonal(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ContactScreen()),
+                onPressed: () async {
+                  await launchUrl(
+                    Uri.parse('https://topmate.io/viresh_dev'),
                   );
                 },
                 child: const Padding(
