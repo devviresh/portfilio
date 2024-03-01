@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/theme.dart';
-import '../../screens/about/about_screen.dart';
-import '../../screens/blog/blog_screen.dart';
-import '../../screens/contact/contact_screen.dart';
-import '../../screens/home/home_screen.dart';
-import '../../screens/project/project_screen.dart';
 
 class NavDrawerTile extends StatelessWidget {
   const NavDrawerTile({
@@ -15,7 +10,8 @@ class NavDrawerTile extends StatelessWidget {
   });
 
   final String name;
-  final Widget screen;
+  // final Widget screen;
+  final String screen;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +19,12 @@ class NavDrawerTile extends StatelessWidget {
       textColor: AppColors.primaryDark,
       onTap: () {
         Navigator.pop(context);
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => screen),
-        );
+        Navigator.pushNamed(context, '/$screen');
+
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => screen),
+        // );
       },
       title: Text(name),
     );
@@ -36,22 +34,27 @@ class NavDrawerTile extends StatelessWidget {
 final List<NavDrawerTile> drawerTiles = [
   const NavDrawerTile(
     name: 'Home',
-    screen: HomeScreen(),
+    screen: '',
+    // screen: HomeScreen(),
   ),
   const NavDrawerTile(
     name: 'About',
-    screen: AboutScreen(),
+    screen: 'about',
+    // screen: AboutScreen(),
   ),
   const NavDrawerTile(
     name: 'Projects',
-    screen: ProjectScreen(),
+    screen: 'projects',
+    // screen: ProjectScreen(),
   ),
   const NavDrawerTile(
     name: 'Blog',
-    screen: BlogScreen(),
+    screen: 'blog',
+    // screen: BlogScreen(),
   ),
   const NavDrawerTile(
     name: 'Contact',
-    screen: ContactScreen(),
+    screen: 'contact',
+    // screen: ContactScreen(),
   ),
 ];

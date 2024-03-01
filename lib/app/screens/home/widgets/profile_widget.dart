@@ -20,7 +20,9 @@ class ProfileWidget extends StatelessWidget {
         backgroundColor: AppColors.secondary,
         child: CircleAvatar(
           radius: size - 4,
-          child: Image.asset('./assets/image/profile.png'),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(200),
+              child: Image.asset('./assets/image/profile.jpg')),
         ),
       ),
     );

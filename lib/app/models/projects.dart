@@ -26,7 +26,7 @@ final List<Project> projects = [
     githubUrl: 'https://github.com/CodeChef-BCET-Chapter/ccbcet-website',
   ),
   Project(
-    imagePath: './assets/image/movie-cite.png',
+    imagePath: './assets/image/movie-cite.jpg',
     title: 'Movie-Cite',
     description:
         'A beautiful designed Flutter app build with Tmdb Api which will give you the updates about upcoming Movies and Tv-series.\nUser can search for their favourite movies, tv series and get more info about their casts, synopsis, gallery etc.',
@@ -35,7 +35,7 @@ final List<Project> projects = [
     githubUrl: 'https://github.com/devviresh/movie-cite',
   ),
   Project(
-    imagePath: './assets/image/climate-x.png',
+    imagePath: './assets/image/climate-x.jpg',
     title: 'Climate-x',
     description:
         'Get real time weather reports based on Geo-location or search.\nDisplays 5 day forecast + 2 day Hourly forecast',
@@ -62,7 +62,7 @@ final List<Project> projects = [
     githubUrl: '',
   ),
   Project(
-    imagePath: './assets/image/templify.png',
+    imagePath: './assets/image/templify.jpg',
     title: 'Templify',
     description:
         'A Flutter web app to manage users and display details in an advanced data table with CRUD operations. Users can create multiple profiles that can be exported as Resumes in PDF format.',

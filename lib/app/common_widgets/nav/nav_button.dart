@@ -1,54 +1,58 @@
 import 'package:flutter/material.dart';
 
-import '../../screens/about/about_screen.dart';
-import '../../screens/blog/blog_screen.dart';
-import '../../screens/contact/contact_screen.dart';
-import '../../screens/home/home_screen.dart';
-import '../../screens/project/project_screen.dart';
-
 class NavButton extends StatelessWidget {
   const NavButton({
     super.key,
-    required this.text,
+    required this.name,
     required this.screen,
   });
 
-  final String text;
-  final Widget screen;
+  final String name;
+  // final Widget screen;
+  final String screen;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => screen),
-        );
+        Navigator.pushNamed(context, '/$screen');
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => screen),
+        // );
       },
-      child: Text(text),
+      child: Text(name),
     );
   }
 }
 
 final List<NavButton> navigation = [
   const NavButton(
-    text: 'Home',
-    screen: HomeScreen(),
+    name: 'Home',
+    screen: '',
+    // screen: HomeScreen(),
   ),
   const NavButton(
-    text: 'About',
-    screen: AboutScreen(),
+    name: 'About',
+    screen: 'about',
+    // screen: AboutScreen(),
   ),
   const NavButton(
-    text: 'Projects',
-    screen: ProjectScreen(),
+    name: 'Projects',
+    screen: 'projects',
+
+    // screen: ProjectScreen(),
   ),
   const NavButton(
-    text: 'Blog',
-    screen: BlogScreen(),
+    name: 'Blog',
+    screen: 'blog',
+
+    // screen: BlogScreen(),
   ),
   const NavButton(
-    text: 'Contact',
-    screen: ContactScreen(),
+    name: 'Contact',
+    screen: 'contact',
+
+    // screen: ContactScreen(),
   ),
 ];

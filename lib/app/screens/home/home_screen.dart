@@ -5,7 +5,6 @@ import 'package:my_portfolio/app/constants/theme.dart';
 import 'package:my_portfolio/app/models/opensource.dart';
 import 'package:my_portfolio/app/models/services.dart';
 import 'package:my_portfolio/app/models/skills.dart';
-import 'package:my_portfolio/app/screens/project/project_screen.dart';
 import '../../models/projects.dart';
 import '../../common_widgets/bottom_bar.dart';
 import '../../common_widgets/nav/nav_drawer.dart';
@@ -140,11 +139,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProjectScreen()),
-                      );
+                      Navigator.pushNamed(context, '/projects');
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => const ProjectScreen()),
+                      // );
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
