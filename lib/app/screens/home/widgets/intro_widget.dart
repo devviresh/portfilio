@@ -38,7 +38,8 @@ class IntroWidget extends StatelessWidget {
             FilledButton(
                 onPressed: () async {
                   await launchUrl(Uri.parse(
-                      "https://docs.google.com/document/d/1tdOiWysK3fz6yYDX1QZC-4UPZAzSXpiwaPffWyuYvec/edit?usp=sharing"));
+                    "https://drive.google.com/file/d/1VxS1en2Wnz3fyW0SuIGOh4D2a8AsVLCL/view?usp=drive_link",
+                  ));
                 },
                 child: const Padding(
                   padding: EdgeInsets.all(8.0),
