@@ -5,10 +5,12 @@ import 'package:my_portfolio/app/common_widgets/nav/navbar.dart';
 import 'package:my_portfolio/app/models/timeline_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../common_widgets/open_source_card.dart';
 import '../../constants/responsive.dart';
 import '../../constants/theme.dart';
 import '../../common_widgets/bottom_bar.dart';
 import '../../common_widgets/nav/nav_drawer.dart';
+import '../../models/opensource.dart';
 import 'widgets/custom_timeline.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -185,6 +187,47 @@ class AboutScreen extends StatelessWidget {
             //     style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
             //   ),
             // ),
+
+            Container(
+              constraints: const BoxConstraints(maxWidth: 1150),
+              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+              child: Column(
+                children: [
+                  const SBH20(),
+                  const Text(
+                    'Hall of Fame',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  GridView.builder(
+                    itemCount: opensources.length,
+                    shrinkWrap: true,
+                    primary: false,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: Screen.isWeb(context)
+                          ? 3
+                          : Screen.isTablet(context)
+                              ? 2
+                              : 1,
+                      childAspectRatio: 3,
+                      crossAxisSpacing: 30,
+                      mainAxisSpacing: 30,
+                    ),
+                    itemBuilder: (context, index) {
+                      return OpenSourceCard(
+                        project: opensources[index],
+                      );
+                    },
+                  ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                ],
+              ),
+            ),
 
             /// Bottom Bar
             const BottomBar(),
