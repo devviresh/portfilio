@@ -42,4 +42,11 @@ final List<TimeLineData> timelines = [
       location: 'Patna, Bihar, IN',
       period: ' Apr 2016 - jun 2018',
       workType: WorkType.education),
+  // TimeLineData(
+  //     imagePath: './assets/image/coc.png',
+  //     title: 'Matriculation',
+  //     company: 'FNS Academy, Gulzarbagh',
+  //     location: 'Patna, Bihar, IN',
+  //     period: ' Mar 2015 - Mar 2016',
+  //     workType: WorkType.education),
 ];

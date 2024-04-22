@@ -65,7 +65,7 @@ class TimeLineCard extends StatelessWidget {
                 Text(
                   timeline.title,
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
 
                 /// Company / College
@@ -98,15 +98,15 @@ class TimeLineCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      children: [
-                        const Icon(Icons.workspace_premium_outlined),
-                        Text(
-                          timeline.achievement ?? '',
-                          style: const TextStyle(fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    )
+                    // Row(
+                    //   children: [
+                    //     const Icon(Icons.workspace_premium_outlined),
+                    //     Text(
+                    //       timeline.achievement ?? '',
+                    //       style: const TextStyle(fontWeight: FontWeight.w500),
+                    //     ),
+                    //   ],
+                    // )
                   ],
                 )
               ],

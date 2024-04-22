@@ -219,7 +219,7 @@ class HomeScreen extends StatelessWidget {
                     height: 30.0,
                   ),
                   GridView.builder(
-                    itemCount: opensources.length,
+                    itemCount: openSources.length,
                     shrinkWrap: true,
                     primary: false,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -234,7 +234,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     itemBuilder: (context, index) {
                       return OpenSourceCard(
-                        project: opensources[index],
+                        project: openSources[index],
                       );
                     },
                   ),

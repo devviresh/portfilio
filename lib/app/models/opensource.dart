@@ -15,7 +15,7 @@ class OpenSource {
       required this.githubUrl});
 }
 
-final List<OpenSource> opensources = [
+final List<OpenSource> openSources = [
   OpenSource(
     imagePath: './assets/image/desicart.png',
     title: 'DesiCart',

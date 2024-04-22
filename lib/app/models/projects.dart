@@ -71,6 +71,15 @@ final List<Project> projects = [
     githubUrl: '',
   ),
   Project(
+    imagePath: './assets/image/chess.png',
+    title: 'ChaturAnga',
+    description:
+        'A Classic Chess game built with flutter.',
+    techStacks: ['Flutter', 'Vercel'],
+    liveUrl: 'https://chatur-anga.vercel.app/',
+    githubUrl: 'https://github.com/devviresh/Chaturanga',
+  ),
+  Project(
     imagePath: './assets/image/apc.png',
     title: 'APC Revision AID',
     description:

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:my_portfolio/app/constants/custom_sized_box.dart';
 import 'package:my_portfolio/app/models/profiles.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constants/responsive.dart';
 import '../constants/theme.dart';
 import '../models/socials.dart';
+import 'copy_widget.dart';
 import 'profile_link.dart';
 import 'social_link.dart';
 
@@ -64,20 +66,15 @@ class BottomBar extends StatelessWidget {
                           height: 5.0,
                         ),
                         InkWell(
-                          onTap: () async {
-                            await launchUrl(Uri(
-                              scheme: 'mailto',
-                              path: 'vireshdev5e@gmail.com',
-                            ));
-                          },
-                          child: const Row(
-                            children: [
-                              Icon(Icons.email_rounded),
-                              SBW5(),
-                              SelectableText('vireshdev5e@gmail.com'),
-                            ],
-                          ),
-                        ),
+                            onTap: () async {
+                              await launchUrl(Uri(
+                                scheme: 'mailto',
+                                path: 'vireshdev5e@gmail.com',
+                              ));
+                            },
+                            child: CopyWidget(
+                                text: 'vireshdev5e@gmail.com',
+                                icon: Icons.email_rounded)),
                         const SBH5(),
                         InkWell(
                           onTap: () async {
@@ -85,12 +82,9 @@ class BottomBar extends StatelessWidget {
                               Uri.parse('https://topmate.io/viresh_dev'),
                             );
                           },
-                          child: const Row(
-                            children: [
-                              Icon(Icons.calendar_month_rounded),
-                              SBW5(),
-                              SelectableText('topmate.io/viresh_dev'),
-                            ],
+                          child: CopyWidget(
+                            icon: Icons.calendar_month_rounded,
+                            text: 'topmate.io/viresh_dev',
                           ),
                         ),
                       ]),
