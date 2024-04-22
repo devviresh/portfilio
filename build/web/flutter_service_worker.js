@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "f32ccf40835bf4ef7d80ec5bf28c5f6d",
-"assets/AssetManifest.bin.json": "09cfe7601ba46289f8240c65c1397b57",
-"assets/AssetManifest.json": "ef8d63162068af2d911b6f84fec46c04",
+const RESOURCES = {"assets/AssetManifest.bin": "176b2f2f44ba18cc9b381177f852d425",
+"assets/AssetManifest.bin.json": "ac5028ffaa976c7dc6da1f29eaf06be4",
+"assets/AssetManifest.json": "2dbacc1a9c13199c0754f43668ded7cb",
 "assets/assets/gif/app.json": "48a323cce8dbf676ff0407a6af0c0037",
 "assets/assets/gif/blog.json": "7f191c72ff75c9307a329cf5011cbdc3",
 "assets/assets/gif/success.json": "4f052988ef78c567589a328eb185ef91",
@@ -19,7 +19,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "f32ccf40835bf4ef7d80ec5bf28c5f6d
 "assets/assets/image/ccbcet.png": "1f67359d4a74a469f243191b89273c7e",
 "assets/assets/image/climate-x.jpg": "3fee962a187438c20f89d9a755941d7d",
 "assets/assets/image/coc.png": "c86ab31daed51dedb35b51a94fb323f2",
+"assets/assets/image/dashboard.png": "ea8106a1e0b652aa3e357491fd76d636",
 "assets/assets/image/desicart.png": "d85b1627b7ce2d2fdd9b0f847dab1300",
+"assets/assets/image/flappy.png": "3e854e9167ec1f4c6fe8cae1cb39a630",
 "assets/assets/image/hacktoberfest.png": "1df33c8b531d355ee8dfde11479afe88",
 "assets/assets/image/hf.png": "5eb4878f1a368176c2a20176f95b50bb",
 "assets/assets/image/logo.png": "02aa11e7e05510f57e18d1b8657c38b7",
@@ -28,6 +30,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "f32ccf40835bf4ef7d80ec5bf28c5f6d
 "assets/assets/image/profile.png": "894da23b57229ce213ddd35fb29c29c0",
 "assets/assets/image/profileblack.jpeg": "3831daf98307edfde2df1d7d8a097774",
 "assets/assets/image/profileblack.jpg": "2055d67f2c1e5aa59ee1d660a407af56",
+"assets/assets/image/rent-house.png": "aa0c9df4394b77f1656ff903bc1cbb12",
 "assets/assets/image/templify.jpg": "1f97ddc3344e62edff8c056634c18aca",
 "assets/assets/image/templifyyyy.png": "81f102de0e9d635da5344684db0beb4e",
 "assets/assets/image/tictic.jpg": "c29cdeba491f8909b1be94c7c43564b0",
@@ -75,9 +78,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "f32ccf40835bf4ef7d80ec5bf28c5f6d
 "icons/Icon-512.png": "05e9b3874cb602a214ca8cc39b087bd7",
 "icons/Icon-maskable-192.png": "f377ab169a341dc3b280b45e9f504722",
 "icons/Icon-maskable-512.png": "05e9b3874cb602a214ca8cc39b087bd7",
-"index.html": "bde0b104c11a576330158933f9c22e74",
-"/": "bde0b104c11a576330158933f9c22e74",
-"main.dart.js": "b4364796db1b8b529a711a8f21d5904e",
+"index.html": "cf3b4a997e4c52c80d7a8eb69d6f8672",
+"/": "cf3b4a997e4c52c80d7a8eb69d6f8672",
+"main.dart.js": "d11ce25ae34160da7398727033503936",
 "manifest.json": "8ef8ed356ebf89d83bcbf2cc56fc1179",
 "version.json": "9b818ca9511483c901bed1545384376c"};
 // The application shell files that are downloaded before a service worker can

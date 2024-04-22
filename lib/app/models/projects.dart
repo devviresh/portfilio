@@ -44,6 +44,24 @@ final List<Project> projects = [
     githubUrl: 'https://github.com/devviresh/climate-x',
   ),
   Project(
+    imagePath: './assets/image/flappy.png',
+    title: 'Flappy Bird',
+    description:
+        'A Flappy Bird game built in Flutter using the Flame engine deployed on vercel.',
+    techStacks: ['Flutter', 'Flame', 'Vercel'],
+    liveUrl: 'https://flappy-bird-vd.vercel.app/',
+    githubUrl: 'https://github.com/devviresh/flappy_bird',
+  ),
+  Project(
+    imagePath: './assets/image/rent-house.png',
+    title: 'Rent House',
+    description:
+        'Simplify the process for landlords and tenants, ensuring seamless property discovery and management.',
+    techStacks: ['React Js', 'Tailwind CSS', 'NextAuth', 'PostgreSql'],
+    liveUrl: 'https://view-property.netlify.app/',
+    githubUrl: '',
+  ),
+  Project(
     imagePath: './assets/image/atlas-copco.png',
     title: 'Atlas Copco',
     description:
@@ -69,5 +87,14 @@ final List<Project> projects = [
     techStacks: ['Flutter', 'NodeJS', 'Rest API', 'MongoDB'],
     liveUrl: 'http://templify.demoserver23.com/',
     githubUrl: '',
+  ),
+  Project(
+    imagePath: './assets/image/dashboard.png',
+    title: 'Dashboard',
+    description:
+        'An Admin Dashboard to display Charts and Sales analytics',
+    techStacks: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: 'https://devviresh.github.io/Dashborad/',
+    githubUrl: 'https://github.com/devviresh/Dashborad',
   ),
 ];
