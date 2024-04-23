@@ -224,6 +224,7 @@ class AboutScreen extends StatelessWidget {
                   // ),
                   ListView.builder(
                     shrinkWrap: true,
+                    primary: false,
                     itemCount: achievements.length,
                     itemBuilder: (context, index) {
                       return AchievementCard(
