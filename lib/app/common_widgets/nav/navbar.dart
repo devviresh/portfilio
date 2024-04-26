@@ -43,7 +43,7 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                     Scaffold.of(context).openEndDrawer();
                   },
                   icon: const Icon(
-                    Icons.menu_rounded,
+                    Icons.menu,
                     color: AppColors.primaryDark,
                   ))
           ],
