@@ -199,9 +199,7 @@ class AboutScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
                   ),
-                  const SizedBox(
-                    height: 30.0,
-                  ),
+                  const SBH30(),
                   // GridView.builder(
                   //   itemCount: opensources.length,
                   //   shrinkWrap: true,
@@ -232,9 +230,7 @@ class AboutScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  const SizedBox(
-                    height: 30.0,
-                  ),
+                  const SBH30(),
                 ],
               ),
             ),
