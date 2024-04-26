@@ -17,7 +17,8 @@ class TimeLineCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.all(20),
+      margin:
+          EdgeInsets.fromLTRB(20, 10, Screen.isMobile(context) ? 0 : 20, 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
