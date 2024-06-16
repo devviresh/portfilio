@@ -9,7 +9,7 @@ class Achievement {
 final List<Achievement> achievements = [
   Achievement(
       description:
-          "Solved 400+ DSA problems, 1700+ Contest rating on LeetCode.",
+          "Solved 400+ DSA problems, 1780+ Contest rating on LeetCode.",
       link: 'https://leetcode.com/viresh_dev'),
   Achievement(
       description: '5 Star Problem Solving and Python on HackerRank.',
