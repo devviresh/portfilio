@@ -49,7 +49,7 @@ class TimeLineCard extends StatelessWidget {
                 topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
             child: Image.asset(
               timeline.imagePath,
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
             ),
           ),
         ),
