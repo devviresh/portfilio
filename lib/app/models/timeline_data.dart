@@ -21,11 +21,18 @@ enum WorkType { work, education }
 
 final List<TimeLineData> timelines = [
   TimeLineData(
+      imagePath: './assets/image/infosys.png',
+      title: 'Software Developer',
+      company: 'Infosys',
+      location: 'Mysore, Karnataka, IN',
+      period: ' Aug 2024 - Present',
+      workType: WorkType.work),
+  TimeLineData(
       imagePath: './assets/image/NurtureHeal.png',
       title: 'App Developer',
       company: 'NurtureHeal',
       location: 'Bengaluru, Karnataka, IN (remote)',
-      period: ' Apr 2024 - Present',
+      period: ' Jan 2024 - Aug 2024',
       workType: WorkType.work),
   TimeLineData(
       imagePath: './assets/image/bit01.jpg',
